@@ -1,0 +1,204 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player {
+  background-color: #e0e0e0;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), -1px -1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.cover-art {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.control-btn {
+  background-color: #e0e0e0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), -1px -1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.control-btn:active {
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1), inset -1px -1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.volume-control {
+  position: relative;
+  margin-top: 20px;
+}
+
+#volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background-color: #e0e0e0;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1), inset -1px -1px 3px rgba(255, 255, 255, 0.6);
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), -1px -1px 3px rgba(255, 255, 255, 0.6);
+}
+
+#volume-slider::-moz-range-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), -1px -1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.volume-control:hover .tooltip {
+  opacity: 1;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  margin-top: 20px;
+}
+
+#current-time,
+#total-time {
+  font-size: 12px;
+}
+
+#progress-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background-color: #e0e0e0;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1), inset -1px -1px 3px rgba(255, 255, 255, 0.6);
+  margin: 0 5px;
+}
+
+#progress-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), -1px -1px 3px rgba(255, 255, 255, 0.6);
+}
+
+#progress-slider::-moz-range-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), -1px -1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.theme-btn {
+  background-color: #e0e0e0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), -1px -1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.theme-btn:active {
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1), inset -1px -1px 3px rgba(255, 255, 255, 0.6);
+}
+
+body.dark-theme {
+  background-color: #222;
+  color: #fff;
+}
+
+body.dark-theme .player {
+  background-color: #222;
+}
+
+body.dark-theme .control-btn,
+body.dark-theme .theme-btn {
+  background-color: #444;
+}
+
+body.dark-theme #volume-slider,
+body.dark-theme #progress-slider {
+  background-color: #444;
+}
+
+body.dark-theme #volume-slider::-webkit-slider-thumb,
+body.dark-theme #progress-slider::-webkit-slider-thumb {
+  background-color: #444;
+}
+
+body.dark-theme #volume-slider::-moz-range-thumb,
+body.dark-theme #progress-slider::-moz-range-thumb {
+  background-color: #444;
+}
+
+.repeat-btn {
+  font-size: 20px;
+}
